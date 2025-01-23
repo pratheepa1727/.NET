@@ -1,0 +1,280 @@
+//program 41
+using System;
+
+class MaxMinArray
+{
+    static void Main()
+    {
+        Console.Write("Enter the size of the array: ");
+        int size = Convert.ToInt32(Console.ReadLine());
+        int[] arr = new int[size];
+
+        Console.WriteLine("Enter the elements of the array:");
+        for (int i = 0; i < size; i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        int max = arr[0], min = arr[0];
+        for (int i = 1; i < size; i++)
+        {
+            if (arr[i] > max)
+                max = arr[i];
+            if (arr[i] < min)
+                min = arr[i];
+        }
+
+        Console.WriteLine("Maximum: {0}", max);
+        Console.WriteLine("Minimum: {0}", min);
+    }
+}
+
+//program 42
+using System;
+
+class SumOfArray
+{
+    static void Main()
+    {
+        Console.Write("Enter the size of the array: ");
+        int size = Convert.ToInt32(Console.ReadLine());
+        int[] arr = new int[size];
+        int sum = 0;
+
+        Console.WriteLine("Enter the elements of the array:");
+        for (int i = 0; i < size; i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+            sum += arr[i];
+        }
+
+        Console.WriteLine("The sum of array elements is: {0}", sum);
+    }
+}
+
+//program 43
+using System;
+
+class SortArray
+{
+    static void Main()
+    {
+        Console.Write("Enter the size of the array: ");
+        int size = Convert.ToInt32(Console.ReadLine());
+        int[] arr = new int[size];
+
+        Console.WriteLine("Enter the elements of the array:");
+        for (int i = 0; i < size; i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        Array.Sort(arr);
+
+        Console.WriteLine("Array in ascending order:");
+        foreach (int item in arr)
+        {
+            Console.Write(item + " ");
+        }
+    }
+}
+
+
+//program 44
+using System;
+
+class SortArrayDescending
+{
+    static void Main()
+    {
+        Console.Write("Enter the size of the array: ");
+        int size = Convert.ToInt32(Console.ReadLine());
+        int[] arr = new int[size];
+
+        Console.WriteLine("Enter the elements of the array:");
+        for (int i = 0; i < size; i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        Array.Sort(arr);
+        Array.Reverse(arr);
+
+        Console.WriteLine("Array in descending order:");
+        foreach (int item in arr)
+        {
+            Console.Write(item + " ");
+        }
+    }
+}
+
+//program 45
+using System;
+
+class SecondLargest
+{
+    static void Main()
+    {
+        Console.Write("Enter the size of the array: ");
+        int size = Convert.ToInt32(Console.ReadLine());
+        int[] arr = new int[size];
+
+        Console.WriteLine("Enter the elements of the array:");
+        for (int i = 0; i < size; i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        Array.Sort(arr);
+        Console.WriteLine("The second largest number is: {0}", arr[size - 2]);
+    }
+}
+
+//progran 46
+using System;
+
+class CountOccurrences
+{
+    static void Main()
+    {
+        Console.Write("Enter the size of the array: ");
+        int size = Convert.ToInt32(Console.ReadLine());
+        int[] arr = new int[size];
+        int[] count = new int[size];
+
+        Console.WriteLine("Enter the elements of the array:");
+        for (int i = 0; i < size; i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+            count[i] = 1;
+        }
+
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = i + 1; j < size; j++)
+            {
+                if (arr[i] == arr[j])
+                {
+                    count[i]++;
+                    arr[j] = -1; // Mark as visited
+                }
+            }
+        }
+
+        Console.WriteLine("Element occurrences:");
+        for (int i = 0; i < size; i++)
+        {
+            if (arr[i] != -1)
+            {
+                Console.WriteLine("{0} occurs {1} times", arr[i], count[i]);
+            }
+        }
+    }
+}
+
+
+//program 46
+using System;
+
+class GCD
+{
+    static void Main()
+    {
+        Console.Write("Enter the first number: ");
+        int a = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the second number: ");
+        int b = Convert.ToInt32(Console.ReadLine());
+
+        while (b != 0)
+        {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+
+        Console.WriteLine("The GCD is: {0}", a);
+    }
+}
+
+
+//program 47
+using System;
+
+class GCD
+{
+    static void Main()
+    {
+        Console.Write("Enter the first number: ");
+        int a = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the second number: ");
+        int b = Convert.ToInt32(Console.ReadLine());
+
+        while (b != 0)
+        {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+
+        Console.WriteLine("The GCD is: {0}", a);
+    }
+}
+
+
+//program 48
+using System;
+
+class LCM
+{
+    static void Main()
+    {
+        Console.Write("Enter the first number: ");
+        int a = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the second number: ");
+        int b = Convert.ToInt32(Console.ReadLine());
+
+        int gcd = a, temp = b;
+        while (temp != 0)
+        {
+            int remainder = gcd % temp;
+            gcd = temp;
+            temp = remainder;
+        }
+
+        int lcm = (a * b) / gcd;
+        Console.WriteLine("The LCM is: {0}", lcm);
+    }
+}
+
+
+//progran 49
+using System;
+
+class RandomNumber
+{
+    static void Main()
+    {
+        Random random = new Random();
+        Console.WriteLine("Random number: {0}", random.Next(1, 101));
+    }
+}
+
+
+//program 50
+using System;
+
+class ReverseString
+{
+    static void Main()
+    {
+        Console.Write("Enter a string: ");
+        string str = Console.ReadLine();
+        char[] charArray = str.ToCharArray();
+        Array.Reverse(charArray);
+
+        Console.WriteLine("Reversed string: {0}", new string(charArray));
+    }
+}
