@@ -1,0 +1,246 @@
+// program 31
+using System;
+
+class SwapWithoutTemp
+{
+    static void Main()
+    {
+        int a, b;
+        Console.Write("Enter the first number: ");
+        a = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the second number: ");
+        b = Convert.ToInt32(Console.ReadLine());
+
+        a = a + b;
+        b = a - b;
+        a = a - b;
+
+        Console.WriteLine("After swapping: a = {0}, b = {1}", a, b);
+    }
+}
+ //progarm 32
+ using System;
+
+class LeapYearCheck
+{
+    static void Main()
+    {
+        Console.Write("Enter a year: ");
+        int year = Convert.ToInt32(Console.ReadLine());
+
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+        {
+            Console.WriteLine("{0} is a leap year.", year);
+        }
+        else
+        {
+            Console.WriteLine("{0} is not a leap year.", year);
+        }
+    }
+}
+
+//progarm 33
+using System;
+
+class ReverseNumber
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        int reverse = 0;
+        while (number != 0)
+        {
+            int remainder = number % 10;
+            reverse = reverse * 10 + remainder;
+            number /= 10;
+        }
+            Console.WriteLine("Reversed number: {0}", reverse);
+    }
+}
+
+//progarm 34
+using System;
+
+class PalindromeNumber
+{
+    static void Main()
+    {
+        int number, reverse = 0, temp;
+
+        Console.Write("Enter a number: ");
+        number = Convert.ToInt32(Console.ReadLine());
+        temp = number;
+
+        while (temp != 0)
+        {
+            int remainder = temp % 10;
+            reverse = reverse * 10 + remainder;
+            temp /= 10;
+        }
+
+        if (reverse == number)
+            Console.WriteLine("{0} is a palindrome.", number);
+        else
+            Console.WriteLine("{0} is not a palindrome.", number);
+    }
+}
+
+//program 35
+using System;
+
+class ArmstrongNumber
+{
+    static void Main()
+    {
+        int number, sum = 0, temp;
+
+        Console.Write("Enter a number: ");
+        number = Convert.ToInt32(Console.ReadLine());
+        temp = number;
+
+        while (temp != 0)
+        {
+            int digit = temp % 10;
+            sum += digit * digit * digit;
+            temp /= 10;
+        }
+
+        if (sum == number)
+            Console.WriteLine("{0} is an Armstrong number.", number);
+        else
+            Console.WriteLine("{0} is not an Armstrong number.", number);
+    }
+}
+
+
+//program 36
+using System;
+
+class FibonacciSeries
+{
+    static void Main()
+    {
+        int n, first = 0, second = 1, next;
+
+        Console.Write("Enter the number of terms: ");
+        n = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Fibonacci Series:");
+        for (int i = 1; i <= n; i++)
+        {
+            Console.Write(first + " ");
+            next = first + second;
+            first = second;
+            second = next;
+        }
+    }
+}
+
+//program 37
+using System;
+
+class PrimeCheck
+{
+    static void Main()
+    {
+        int number;
+        bool isPrime = true;
+
+        Console.Write("Enter a number: ");
+        number = Convert.ToInt32(Console.ReadLine());
+
+        if (number <= 1)
+            isPrime = false;
+        else
+        {
+            for (int i = 2; i <= Math.Sqrt(number); i++)
+            {
+                if (number % i == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        if (isPrime)
+            Console.WriteLine("{0} is a prime number.", number);
+        else
+            Console.WriteLine("{0} is not a prime number.", number);
+    }
+}
+
+
+//program 38
+using System;
+
+class PalindromeString
+{
+    static void Main()
+    {
+        Console.Write("Enter a string: ");
+        string str = Console.ReadLine();
+        string reversed = "";
+
+        for (int i = str.Length - 1; i >= 0; i--)
+        {
+            reversed += str[i];
+        }
+
+        if (str == reversed)
+            Console.WriteLine("{0} is a palindrome.", str);
+        else
+            Console.WriteLine("{0} is not a palindrome.", str);
+    }
+}
+
+
+//program 39
+using System;
+
+class VowelCount
+{
+    static void Main()
+    {
+        Console.Write("Enter a string: ");
+        string str = Console.ReadLine();
+        int count = 0;
+
+        foreach (char ch in str)
+        {
+            if ("aeiouAEIOU".IndexOf(ch) >= 0)
+            {
+                count++;
+            }
+        }
+
+        Console.WriteLine("Number of vowels: {0}", count);
+    }
+}
+
+
+//program 40
+using System;
+
+class FactorialIteration
+{
+    static void Main()
+    {
+        int number, factorial = 1;
+
+        Console.Write("Enter a number: ");
+        number = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 1; i <= number; i++)
+        {
+            factorial *= i;
+        }
+
+        Console.WriteLine("The factorial of {0} is: {1}", number, factorial);
+    }
+}
+
+
