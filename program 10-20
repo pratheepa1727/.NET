@@ -1,0 +1,278 @@
+//11th program
+using System;
+
+class ReverseNumber
+{
+    static void Main()
+    {
+
+        int number, reverse = 0;
+
+
+        Console.Write("Enter a number: ");
+        number = Convert.ToInt32(Console.ReadLine());
+
+        while (number != 0)
+        {
+            int digit = number % 10; // Extract the last digit
+            reverse = reverse * 10 + digit; // Add the digit to the reversed number
+            number /= 10; // Remove the last digit
+        }
+
+        Console.WriteLine("The reversed number is: {0}", reverse);
+    }
+}
+
+//12th program
+using System;
+
+class PalindromeNumber
+{
+    static void Main()
+    {
+
+        int number, temp, reverse = 0;
+
+        Console.Write("Enter a number: ");
+        number = Convert.ToInt32(Console.ReadLine());
+
+        temp = number;
+
+        while (number != 0)
+        {
+            int digit = number % 10; // Extract the last digit
+            reverse = reverse * 10 + digit; // Add the digit to the reversed number
+            number /= 10; // Remove the last digit
+        }
+
+        if (temp == reverse)
+        {
+            Console.WriteLine("{0} is a palindrome.", temp);
+        }
+        else
+        {
+            Console.WriteLine("{0} is not a palindrome.", temp);
+        }
+    }
+}
+
+//13ht program
+using System;
+
+class Factorial
+{
+    static void Main()
+    {
+
+        int number;
+        long factorial = 1; 
+
+        Console.Write("Enter a number: ");
+        number = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 1; i <= number; i++)
+        {
+            factorial *= i; 
+        }
+
+        Console.WriteLine("The factorial of {0} is: {1}", number, factorial);
+    }
+}
+
+//14th program
+using System;
+
+class FibonacciSeries
+{
+    static void Main()
+    {
+        int n, first = 0, second = 1, next;
+
+        Console.Write("Enter the number of terms for the Fibonacci series: ");
+        n = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Fibonacci Series up to {0} terms:", n);
+        for (int i = 1; i <= n; i++)
+        {
+            Console.Write("{0} ", first);
+            next = first + second;
+            first = second;
+            second = next;
+        }
+    }
+}
+
+//15th program
+using System;
+
+class CheckPrime
+{
+    static void Main()
+    {
+        int number, i;
+        bool isPrime = true;
+
+        Console.Write("Enter a number: ");
+        number = Convert.ToInt32(Console.ReadLine());
+
+        if (number <= 1)
+        {
+            isPrime = false;
+        }
+        else
+        {
+            for (i = 2; i <= Math.Sqrt(number); i++)
+            {
+                if (number % i == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        if (isPrime)
+        {
+            Console.WriteLine("{0} is a prime number.", number);
+        }
+        else
+        {
+            Console.WriteLine("{0} is not a prime number.", number);
+        }
+    }
+}
+
+//16th program
+using System;
+
+class ArmstrongNumber
+{
+    static void Main()
+    {
+        int number, temp, remainder, sum = 0;
+
+        Console.Write("Enter a number: ");
+        number = Convert.ToInt32(Console.ReadLine());
+
+        temp = number;
+
+        while (temp != 0)
+        {
+            remainder = temp % 10;
+            sum += remainder * remainder * remainder;
+            temp /= 10;
+        }
+
+        if (sum == number)
+        {
+            Console.WriteLine("{0} is an Armstrong number.", number);
+        }
+        else
+        {
+            Console.WriteLine("{0} is not an Armstrong number.", number);
+        }
+    }
+}
+
+//17th program
+using System;
+
+class PowerOfNumber
+{
+    static void Main()
+    {
+        double baseNumber, result = 1;
+        int exponent;
+
+        Console.Write("Enter the base number: ");
+        baseNumber = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter the exponent: ");
+        exponent = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 1; i <= exponent; i++)
+        {
+            result *= baseNumber;
+        }
+
+        Console.WriteLine("{0} raised to the power {1} is: {2}", baseNumber, exponent, result);
+    }
+}
+
+//18th program
+using System;
+
+class SumOfNaturalNumbers
+{
+    static void Main()
+    {
+        int n, sum = 0;
+
+        Console.Write("Enter a positive number: ");
+        n = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 1; i <= n; i++)
+        {
+            sum += i;
+        }
+        Console.WriteLine("The sum of the first {0} natural numbers is: {1}", n, sum);
+    }
+}
+
+//19th program
+using System;
+
+class CountDigits
+{
+    static void Main()
+    {
+        int number, count = 0;
+
+        Console.Write("Enter a number: ");
+        number = Convert.ToInt32(Console.ReadLine());
+
+        while (number != 0)
+        {
+            number /= 10;
+            count++;
+        }
+
+        Console.WriteLine("The number of digits is: {0}", count);
+    }
+}
+
+//20th program
+using System;
+
+class GCDOfTwoNumbers
+{
+    static void Main()
+    {
+        int number1, number2, gcd = 1;
+
+        Console.Write("Enter the first number: ");
+        number1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the second number: ");
+        number2 = Convert.ToInt32(Console.ReadLine());
+
+        while (number2 != 0)
+        {
+            int temp = number2;
+            number2 = number1 % number2;
+            number1 = temp;
+        }
+
+        gcd = number1;
+
+        Console.WriteLine("The GCD of the two numbers is: {0}", gcd);
+    }
+}
+
+
+
+
+
+
+
+
