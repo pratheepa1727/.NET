@@ -1,0 +1,276 @@
+//program 21
+using System;
+
+class LCMOfTwoNumbers
+{
+    static void Main()
+    {
+        int number1, number2, lcm, gcd, a, b;
+
+        Console.Write("Enter the first number: ");
+        number1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the second number: ");
+        number2 = Convert.ToInt32(Console.ReadLine());
+
+        a = number1;
+        b = number2;
+
+        while (b != 0)
+        {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+
+        gcd = a;
+        lcm = (number1 * number2) / gcd;
+
+        Console.WriteLine("The LCM of the two numbers is: {0}", lcm);
+    }
+}
+
+//program 22
+using System;
+
+class LargestOfThree
+{
+    static void Main()
+    {
+        int num1, num2, num3;
+
+        Console.Write("Enter the first number: ");
+        num1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the second number: ");
+        num2 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the third number: ");
+        num3 = Convert.ToInt32(Console.ReadLine());
+
+        if (num1 > num2 && num1 > num3)
+        {
+            Console.WriteLine("The largest number is: {0}", num1);
+        }
+        else if (num2 > num1 && num2 > num3)
+        {
+            Console.WriteLine("The largest number is: {0}", num2);
+        }
+        else
+        {
+            Console.WriteLine("The largest number is: {0}", num3);
+        }
+    }
+}
+
+//program 23
+using System;
+
+class EvenOrOdd
+{
+    static void Main()
+    {
+
+        int number;
+
+        Console.Write("Enter a number: ");
+        number = Convert.ToInt32(Console.ReadLine());
+
+        if (number % 2 == 0)
+        {
+            Console.WriteLine("{0} is even.", number);
+        }
+        else
+        {
+            Console.WriteLine("{0} is odd.", number);
+        }
+    }
+}
+
+//program 24
+using System;
+
+class SumOfEvenNumbers
+{
+    static void Main()
+    {
+        int n, sum = 0;
+
+        Console.Write("Enter the range: ");
+        n = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 1; i <= n; i++)
+        {
+            if (i % 2 == 0)
+            {
+                sum += i;
+            }
+        }
+
+        Console.WriteLine("The sum of even numbers up to {0} is: {1}", n, sum);
+    }
+}
+
+program 25
+using System;
+
+class PositiveNegativeZero
+{
+    static void Main()
+    {
+        int number;
+
+        Console.Write("Enter a number: ");
+        number = Convert.ToInt32(Console.ReadLine());
+
+        if (number > 0)
+        {
+            Console.WriteLine("{0} is positive.", number);
+        }
+        else if (number < 0)
+        {
+            Console.WriteLine("{0} is negative.", number);
+        }
+        else
+        {
+            Console.WriteLine("The number is zero.");
+        }
+    }
+}
+
+//program 26
+using System;
+
+class MultiplicationTable
+{
+    static void Main()
+    {
+        int number;
+
+        Console.Write("Enter a number to display its multiplication table: ");
+        number = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Multiplication Table of {0}:", number);
+        for (int i = 1; i <= 10; i++)
+        {
+            Console.WriteLine("{0} x {1} = {2}", number, i, number * i);
+        }
+    }
+}
+
+//program 27
+using System;
+
+class PrimeNumbersInRange
+{
+    static void Main()
+    {
+        int start, end;
+
+        Console.Write("Enter the start of the range: ");
+        start = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the end of the range: ");
+        end = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Prime numbers between {0} and {1}:", start, end);
+        for (int i = start; i <= end; i++)
+        {
+            bool isPrime = true;
+
+            if (i <= 1)
+                isPrime = false;
+            else
+            {
+                for (int j = 2; j <= Math.Sqrt(i); j++)
+                {
+                    if (i % j == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+
+            if (isPrime)
+            {
+                Console.WriteLine(i);
+            }
+        }
+    }
+}
+
+//program 28
+using System;
+
+class SumOfOddNumbers
+{
+    static void Main()
+    {
+        int n, sum = 0;
+
+        Console.Write("Enter the range: ");
+        n = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 1; i <= n; i++)
+        {
+            if (i % 2 != 0)
+            {
+                sum += i;
+            }
+        }
+
+        Console.WriteLine("The sum of odd numbers up to {0} is: {1}", n, sum);
+    }
+}
+
+//program 29
+using System;
+
+class FactorialRecursion
+{
+    static int Factorial(int n)
+    {
+        if (n == 0 || n == 1)
+            return 1;
+        return n * Factorial(n - 1);
+    }
+
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("The factorial of {0} is: {1}", number, Factorial(number));
+    }
+}
+
+//program 30
+using System;
+
+class AverageOfNumbers
+{
+    static void Main()
+    {
+        int n, sum = 0;
+        Console.Write("Enter the number of terms: ");
+        n = Convert.ToInt32(Console.ReadLine());
+        for (int i = 1; i <= n; i++)
+        {
+            Console.Write("Enter number {0}: ", i);
+            int num = Convert.ToInt32(Console.ReadLine());
+            sum += num;
+        }
+        double average = (double)sum / n;
+        Console.WriteLine("The average is: {0}", average);
+    }
+}
+
+
+
+
+
+
+
+
+
